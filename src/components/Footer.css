@@ -1,0 +1,198 @@
+/* Footer */
+.footer {
+  padding: 1em;
+  margin: 2rem auto 0;
+  background-color: #f8f8f8;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+}
+
+.footer-title {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--darkerGrey);
+  letter-spacing: 1px;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  font-weight: var(--bold);
+  color: inherit;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-newsletter {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.footer-newsletter p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--darkGrey);
+}
+
+.footer-email {
+  display: block;
+  width: 100%;
+  padding: 0.35rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: none;
+  color: var(--darkGrey);
+  background-color: var(--white);
+  border: 2px solid rgba(79, 57, 97, 0.141);
+  border-radius: 3px;
+  outline-color: var(--yellow);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-error-message {
+  display: block;
+  text-align: left;
+  color: #cc3648;
+  visibility: hidden;
+}
+
+.form-error .footer-email {
+  border-color: #cc3648;
+}
+
+.form-error .form-error-message {
+  visibility: visible;
+}
+
+.button-email {
+  margin-top: 1rem;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 2px 4px 0 rgba(14, 30, 37, 0.12);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.footer-social {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.footer-social a {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.footer-social svg {
+  vertical-align: middle;
+}
+
+.copyright {
+  flex-basis: 100%;
+  text-align: center;
+  color: var(--darkerGrey);
+}
+
+.dotted-link {
+  color: #a94e76;
+  border-bottom: 1px dashed #a94e76;
+}
+
+@media (min-width: 32em) {
+  .footer-newsletter {
+    text-align: left;
+  }
+
+  .footer-form {
+    display: -webkit-box;
+    display: flex;
+    position: relative;
+  }
+
+  .footer-email {
+    width: auto;
+  }
+
+  .button-email {
+    width: auto;
+    margin: 0 0 0 1rem;
+  }
+
+  .form-error-message {
+    position: absolute;
+    top: 44px;
+  }
+
+  .footer-social {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 45em) {
+  .footer {
+    padding: 2em 1em;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "nav newsletter" "social-links social-links" "copyright copyright";
+  }
+
+  .footer-nav {
+    grid-area: nav;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  .footer-title {
+    margin-top: 0;
+  }
+
+  .footer-newsletter {
+    margin: 0;
+    grid-area: newsletter;
+  }
+
+  .footer-social {
+    grid-area: social-links;
+  }
+
+  .copyright {
+    grid-area: copyright;
+    margin: 0;
+  }
+}
+
+@media (min-width: 60em) {
+  .footer-container {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+.button {
+    display: inline-block;
+    padding: 0.7em 1.2em;
+    font-size: 1rem;
+    background-color: #551dda;
+    color: var(--white);
+    border-radius: 3px;
+  }
+  
+  .button:hover {
+    background-color: #192b5c;
+  }

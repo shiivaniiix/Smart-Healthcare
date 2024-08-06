@@ -1,0 +1,141 @@
+/* Styles for the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    color: #fff;
+  }
+  
+  /* Logo styles */
+  .logo {
+    height: 8vh;
+    padding-left: 5vh;
+  }
+  
+  /* Styles for the navigation bar */
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    font-size: large;
+    /* font-family: 'Courier New', Courier, monospace; */
+  }
+  
+  .nav-link:hover {
+    color: blue;
+  }
+  
+  .nav-link-cta {
+    /* background-color: #ff5722; */
+    color: #333;
+  }
+  
+  .nav-link-cta:hover {
+    color: blue;
+  }
+  
+  /* Styles for the navigation toggle button */
+  .button {
+    display: inline-block;
+    padding: 0.7em 1.2em;
+    font-size: 1rem;
+    background-color: #551dda;
+    color: white;
+    border-radius: 3px;
+  }
+  
+  .button:hover {
+    background-color: #192b5c;
+  }
+
+  .nav-toggle {
+    display: none; /* Hidden by default for larger screens */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Visually hidden element */
+  .visuallyhidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  /* Hamburger icon */
+  .hamburger {
+    display: inline-block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+  }
+  
+  .hamburger::before {
+    top: -8px;
+  }
+  
+  .hamburger::after {
+    top: 8px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav[aria-expanded='true'] {
+      display: flex;
+    }
+  }
+  
