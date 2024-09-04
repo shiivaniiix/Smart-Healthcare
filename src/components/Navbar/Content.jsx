@@ -186,7 +186,7 @@ const Content = () => {
     <a href="./dashboard.html" className="button">
       Dashboard
     </a>
-    <div className="video-learning">
+    {/* <div className="video-learning">
       <iframe
         width={853}
         height={480}
@@ -195,7 +195,7 @@ const Content = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen=""
       />
-    </div>
+    </div> */}
     <svg
       width={1440}
       height={892}

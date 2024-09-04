@@ -1,13 +1,13 @@
 import Dashboard from "./components/DashBoard/Dashboard"
-import Hompage from "./components/Hompage"
+// import Hompage from "./components/Hompage"
 
 
 function App() {
 
   return (
     <>
-      <Hompage />
-      {/* <Dashboard /> */}
+      {/* <Hompage /> */}
+      <Dashboard />
     </>
   )
 }

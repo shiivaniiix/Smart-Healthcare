@@ -29,7 +29,7 @@ const Topbar = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-link-cta" href="./dashboard.html">
+        <a className="nav-link nav-link-cta" href="">
           Dashboard
         </a>
       </li>
