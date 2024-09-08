@@ -2,10 +2,10 @@ import Footer from './Footer'
 import Content from './Navbar/Content'
 import Topbar from './Navbar/Topbar'
 
-const Hompage = () => {
+const Hompage = (props) => {
   return (
     <>
-        <Topbar />
+        <Topbar {...props}/>
         <Content />
         <Footer />
     </>

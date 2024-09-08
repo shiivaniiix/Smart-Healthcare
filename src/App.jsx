@@ -3,9 +3,9 @@ import Hompage from "./components/Hompage"
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import SignUp from "./components/SignUp"
 import Login from "./components/Login"
-import { useEffect, useState } from "react"
+import {createContext, useEffect, useState } from "react"
 import { auth } from "./firebase"
-
+export const UserContext = createContext();
 
 function App() {
 
@@ -35,11 +35,11 @@ function App() {
           />
           <Route 
             path="/homepage"
-            element={<Hompage /> }
+            element={<Hompage name={userName} /> }
           />
           <Route 
             path="/dashboard" 
-            element={<Dashboard name={userName} />} 
+            element={<Dashboard name={(userName)} />} 
           />
         </Routes>
       </Router>

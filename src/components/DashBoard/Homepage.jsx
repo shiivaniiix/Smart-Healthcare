@@ -1,7 +1,8 @@
-import GroupCard from "./GroupCard"
-import HeartRateCard from "./HeartRate"
-import OxygenCard from "./OxygenCard"
-import TemperatureCard from "./TemperatureCard"
+import PropTypes from 'prop-types';
+import GroupCard from "./GroupCard";
+import HeartRateCard from "./HeartRate";
+import OxygenCard from "./OxygenCard";
+import TemperatureCard from "./TemperatureCard";
 
 const Homepage = (props) => {
   return (
@@ -25,7 +26,7 @@ const Homepage = (props) => {
           {/* User Avatar */}
           <div className="flex ml-10">
             <h1 className="mr-3 text-lg font-normal p-3">
-               {props.name ? `Welcome - ${props.name}` : "User"}
+              {props.name ? `Welcome - ${props.name}` : "User"}
             </h1>
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" 
@@ -35,7 +36,7 @@ const Homepage = (props) => {
           </div>
         </div>
 
-        <h1 className="mt-5 text-gray-600 text-2xl font-normal m commi">Dashboard</h1>
+        <h1 className="mt-5 text-gray-600 text-2xl font-normal">Dashboard</h1>
         <div className="grid grid-cols-4 gap-8">
           <TemperatureCard />
           <OxygenCard />
@@ -45,6 +46,11 @@ const Homepage = (props) => {
       </div>
     </>
   );
-}
+};
+
+// Define the expected prop types for the Homepage component
+Homepage.propTypes = {
+  name: PropTypes.string, // Expecting a string but it's not required
+};
 
 export default Homepage;
