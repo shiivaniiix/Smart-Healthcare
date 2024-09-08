@@ -29,7 +29,7 @@ body {
   background-color: var(--lightGrey);
   font-family: var(--familyRoboto);
   line-height: 1.6;
-  padding-top: 80px;
+  /* padding-top: 80px; */
 }
 
 ul {

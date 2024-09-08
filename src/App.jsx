@@ -1,13 +1,48 @@
 import Dashboard from "./components/DashBoard/Dashboard"
-// import Hompage from "./components/Hompage"
+import Hompage from "./components/Hompage"
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+import SignUp from "./components/SignUp"
+import Login from "./components/Login"
+import { useEffect, useState } from "react"
+import { auth } from "./firebase"
 
 
 function App() {
 
+  const [userName, setUserName] = useState("")
+
+  useEffect(()=>{
+    auth.onAuthStateChanged((user)=>{
+      // console.log(user)
+      if(user){
+        setUserName(user.displayName);
+      }else setUserName("");
+    })
+  },[])
+
+
   return (
     <>
-      {/* <Hompage /> */}
-      <Dashboard />
+      <Router>
+        <Routes>
+          <Route 
+            path="/"
+            element={<Hompage /> }
+          />
+          <Route 
+            path="/dashboard" 
+            element={<Dashboard name={userName} />} 
+          />
+          <Route 
+            path="/login" 
+            element={<Login />} 
+          />
+          <Route 
+            path="/signup" 
+            element={<SignUp />} 
+          />
+        </Routes>
+      </Router>
     </>
   )
 }

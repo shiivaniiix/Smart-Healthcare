@@ -4,7 +4,7 @@ import '../../style.css'
 const Content = () => {
   return (
     <>
-        <main>
+        <main className='pt-14'>
   <section className="intro">
     <h1 className="intro__title">HealthCare IoT</h1>
     <p className="intro__subtitle">

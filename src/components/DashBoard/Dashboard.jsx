@@ -2,13 +2,13 @@
 import Sidebar from './../Navbar/Sidebar.jsx'
 import Homepage from './Homepage.jsx'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <>
-    <div className="flex">
+    <div className="flex mt-0 pt-0 ">
         <Sidebar />
         <div className="p-7 text-2xl font-semibold flex-1 h-screen">
-          <Homepage />
+          <Homepage name={props.name}/>
         </div>
     </div>
     </>

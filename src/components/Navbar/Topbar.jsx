@@ -4,13 +4,13 @@ const Topbar = () => {
   return (
     <>
     <header id="header" className="header">
-  <img
-    src="favicon.ico"
-    style={{ height: "8vh", paddingLeft: "5vh" }}
-    className="logo"
-    alt="Learn English"
-    id="header-img"
-  />
+    <img
+      src="favicon.ico"
+      style={{ height: "8vh", paddingLeft: "5vh" }}
+      className="logo"
+      alt="Learn English"
+      id="header-img"
+    />
   <nav id="nav-bar" className="nav">
     <ul className="nav-list">
       <li className="nav-item">
@@ -29,9 +29,9 @@ const Topbar = () => {
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-link-cta" href="">
+      <a className="nav-link nav-link-cta" href="/dashboard">
           Dashboard
-        </a>
+      </a>
       </li>
     </ul>
   </nav>
