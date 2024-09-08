@@ -32,7 +32,7 @@ const SignUp = () => {
                 await updateProfile(user,{
                     displayName:values.name,
                 })
-                navigate("/")
+                navigate("/homepage")
                 // console.log(user)
             })
         .catch((err) => {
@@ -148,7 +148,7 @@ const SignUp = () => {
           <p className="mt-10 text-center text-sm text-gray-500">
             Already have an account?{' '}
             <Link
-              to="/login"
+              to="/"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Login

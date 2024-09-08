@@ -26,20 +26,20 @@ function App() {
       <Router>
         <Routes>
           <Route 
-            path="/"
-            element={<Hompage /> }
-          />
-          <Route 
-            path="/dashboard" 
-            element={<Dashboard name={userName} />} 
-          />
-          <Route 
-            path="/login" 
+            path="/" 
             element={<Login />} 
           />
           <Route 
             path="/signup" 
             element={<SignUp />} 
+          />
+          <Route 
+            path="/homepage"
+            element={<Hompage /> }
+          />
+          <Route 
+            path="/dashboard" 
+            element={<Dashboard name={userName} />} 
           />
         </Routes>
       </Router>
