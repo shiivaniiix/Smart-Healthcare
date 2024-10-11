@@ -1,14 +1,28 @@
 import PropTypes from 'prop-types';
 import Sidebar from './../Navbar/Sidebar.jsx';
 import Homepage from './Homepage.jsx';
+import { useState } from 'react';
+import Footer from '../Footer.jsx';
 
 const Dashboard = (props) => {
+  // State to track sidebar open/close
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Toggle function
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <div className="flex mt-0 pt-0">
-        <Sidebar />
-        <div className="p-7 text-2xl font-semibold flex-1 h-screen">
+      <div className="flex">
+        {/* Pass the toggle state and function to Sidebar */}
+        <Sidebar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
+
+        {/* Main content area with dynamic padding based on sidebar width */}
+        <div className={` transition-all duration-300 ${isSidebarOpen ? 'pl-72' : 'pl-28'}`}>
           <Homepage name={props.name} />
+          <Footer />
         </div>
       </div>
     </>
