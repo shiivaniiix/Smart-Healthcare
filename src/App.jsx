@@ -5,6 +5,8 @@ import SignUp from "./components/SignUp"
 import Login from "./components/Login"
 import {createContext, useEffect, useState } from "react"
 import { auth } from "./firebase"
+import Accounts from "./components/DashBoard/Accounts"
+import Modal from "./components/DashBoard/Modal"
 export const UserContext = createContext();
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       // console.log(user)
       if(user){
         setUserName(user.displayName);
+        console.log(user)
       }else setUserName("");
     })
   },[])
@@ -40,6 +43,14 @@ function App() {
           <Route 
             path="/dashboard" 
             element={<Dashboard name={(userName)} />} 
+          />
+          <Route 
+            path="/accounts"
+            element={<Accounts />}
+          />
+          <Route 
+            path="/modal"
+            element={<Modal />}
           />
         </Routes>
       </Router>

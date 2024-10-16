@@ -1,16 +1,19 @@
 // import { useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./Sidebar.css";
+import PropTypes from 'prop-types'; // Import PropTypes
+import { Link } from "react-router-dom"; // Import Link
 
 function Sidebar({ isOpen, onToggle }) {
+  // Define menu items with their respective routes
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
-    { title: "Schedule", src: "Calendar" },
-    { title: "Search", src: "Search" },
-    { title: "Files", src: "Folder", gap: true },
-    { title: "Setting", src: "Setting" },
+    { title: "Dashboard", src: "Chart_fill", path: "/dashboard" },
+    { title: "Home", src: "Chat", path: "/homepage" },
+    { title: "Accounts", src: "User", gap: true, path: "/accounts" },
+    { title: "Schedule", src: "Calendar", path: "/schedule" },
+    { title: "Search", src: "Search", path: "/search" },
+    { title: "Files", src: "Folder", gap: true, path: "/files" },
+    { title: "Setting", src: "Setting", path: "/settings" },
   ];
 
   return (
@@ -27,13 +30,21 @@ function Sidebar({ isOpen, onToggle }) {
       <ul className="pt-6">
         {Menus.map((menu, index) => (
           <li key={index} className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-indigo-300 rounded-xl ${menu.gap ? "mt-9" : "mt-2"}`}>
-            <img src={`./src/assets/${menu.src}.png`} alt="" />
-            <span className={`${!isOpen && 'hidden'} origin-left duration-200`}>{menu.title}</span>
+            <Link to={menu.path} className="flex items-center gap-x-4 w-full">
+              <img src={`./src/assets/${menu.src}.png`} alt="" />
+              <span className={`${!isOpen && 'hidden'} origin-left duration-200`}>{menu.title}</span>
+            </Link>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+
+// Define prop types for the Sidebar component
+Sidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,   // isOpen should be a boolean
+  onToggle: PropTypes.func.isRequired,  // onToggle should be a function
+};
 
 export default Sidebar;

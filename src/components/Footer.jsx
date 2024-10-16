@@ -64,7 +64,7 @@ const Footer = () => {
         </ul>
       </div>
     </nav>
-    <div className="footer-newsletter" id="subscribe">
+    <div>
       <p>
         Stay up to date with all Health news by subscribing to our newsletter.
       </p>
@@ -77,22 +77,6 @@ const Footer = () => {
         <label htmlFor="email" className="visuallyhidden">
           Email address
         </label>
-        <input
-          type="email"
-          name="email"
-          className="footer-email"
-          placeholder="Email Address"
-          id="email"
-          spellCheck="false"
-          aria-required="true"
-          aria-invalid="false"
-        />
-        <input
-          type="submit"
-          id="submit"
-          className="button button-email"
-          defaultValue="Subscribe"
-        />
       </form>
     </div>
     <ul className="footer-social">
@@ -173,7 +157,7 @@ const Footer = () => {
       </li>
     </ul>
     <p className="copyright">
-      Project made by{" "}
+      Project made with ❤️ by{" "}
       <a
         className="dotted-link"
         href="https://www.instagram.com"

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import Ploty from './Ploty';
+import Ploty from './Ploty'; // Ensure this matches the filename exactly
+
 
 const Homepage = (props) => {
   return (

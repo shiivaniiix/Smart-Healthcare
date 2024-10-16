@@ -7,7 +7,7 @@ const HeartRateCard = ({ averageHeartRate }) => {
       <div>
         <h3 className="text-[#36b9cc] font-semibold">Average Heart Rate</h3>
         <p className="text-3xl font-bold text-gray-800 mt-2">
-          {averageHeartRate ? `${averageHeartRate} BPM` : '--'}
+          {averageHeartRate ? `${averageHeartRate} BPM` : '0'}
         </p>
       </div>
       <div>
