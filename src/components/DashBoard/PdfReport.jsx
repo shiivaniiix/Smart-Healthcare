@@ -17,7 +17,8 @@ const PdfReport = ({
   heartRateData, 
   timestamps, 
   temperatureData, 
-  spo2Data // Add spo2Data as a prop
+  spo2Data, // Add spo2Data as a prop
+  predictedHealthStatus // Add predictedHealthStatus as a prop
 }) => {
   const reportRef = useRef(null);
 
@@ -38,7 +39,7 @@ const PdfReport = ({
     };
 
     captureReport();
-  }, [avgTemperature, avgSpO2, avgHeartRate, heartRateData, timestamps, temperatureData, spo2Data]);
+  }, [avgTemperature, avgSpO2, avgHeartRate, heartRateData, timestamps, temperatureData, spo2Data, predictedHealthStatus]);
 
   return (
     <div ref={reportRef} style={{ padding: '20px', background: '#f6f7fa' }}>
@@ -48,6 +49,13 @@ const PdfReport = ({
         <OxygenCard averageOxygen={avgSpO2} />
         <HeartRateCard averageHeartRate={avgHeartRate} />
       </div>
+
+      {/* Display predicted health status */}
+      {predictedHealthStatus && (
+        <div className="mb-6 text-center">
+          <h2 className="text-xl font-bold">Predicted Health Status: {predictedHealthStatus}</h2>
+        </div>
+      )}
 
       {/* Heart Rate Section */}
       <div className="flex flex-col items-center mt-6">

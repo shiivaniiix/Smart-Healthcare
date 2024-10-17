@@ -21,6 +21,29 @@ function Ploty({ userName }) {
   const [heartRateData, setHeartRateData] = useState([]);
   const [timestamps, setTimestamps] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [predictedHealthStatus, setPredictedHealthStatus] = useState('');
+
+  // Update your handlePredictHealthStatus function:
+  const handlePredictHealthStatus = async () => {
+    const response = await fetch('http://127.0.0.1:5000/predict', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        temperature: avgTemperature,
+        spo2: avgSpO2,
+        heart_rate: avgHeartRate,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setPredictedHealthStatus(data.predicted_health_status);
+    } else {
+      console.error('Error predicting health status:', response.statusText);
+    }
+  };
 
   const downloadPdf = () => {
     const input = reportRef.current;
@@ -173,15 +196,33 @@ function Ploty({ userName }) {
   timestamps={timestamps} // Pass timestamps
   temperatureData={temperatureData} // Pass temperature data for PDF report
   spo2Data={spo2Data} // Pass SpO2 data for PDF report
-  name={userName ? userName : 'Guest'} // Pass the user's name
+  predictedHealthStatus={predictedHealthStatus}
 />
       </div>
 
       {/* Button to download PdfReport as PDF */}
-      <button onClick={downloadPdf} className="mt-4 p-2 bg-blue-500 text-white rounded">
-        Create Report
-      </button>
+      <div className="flex space-x-4 mt-4">
+  <button
+    onClick={downloadPdf}
+    className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+  >
+    Create Report
+  </button>
+
+  <button
+    onClick={handlePredictHealthStatus}
+    className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+  >
+    Predict Health Status
+  </button>
+</div>
+
+{predictedHealthStatus && (
+  <div>Predicted Health Status: {predictedHealthStatus}</div>
+)}
+
     </div>
+    
   );
 }
 

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import Sidebar from '../Navbar/Sidebar';
 import { useState } from 'react';
+import Footer from '../Footer';
+import SalineFlowGraph from './Saline';
 // import { db } from './path-to-your-firebase-file'; // Adjust the path to your Firebase file
 // import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from '../../firebase'; // Import necessary functions
-import { collection, query, where, getDoc } from 'firebase/firestore';
+// import { db } from '../../firebase'; // Import necessary functions
+// import { collection, query, where, getDoc } from 'firebase/firestore';
 
 
 const Accounts = () => {
@@ -22,7 +24,7 @@ const Accounts = () => {
           <button onClick={toggle} className="text-gray-600 focus:outline-none md:hidden">
             <i className={`fas fa-${isOpen ? 'times' : 'bars'} text-2xl`}></i> {/* Toggle Button */}
           </button>
-          <h1 className="text-center text-lg font-semibold">Welcome to Account Section</h1>
+          <h1 className="text-center text-lg font-semibold">Welcome to Our Application</h1>
           <nav>
             <ul className='flex space-x-14'>
               <li className='text-lg'>
@@ -44,6 +46,10 @@ const Accounts = () => {
             </ul>
           </nav>
         </header>
+        <div className='my-10'>
+          <SalineFlowGraph />
+        </div>
+        <Footer />
       </main>
     </div>
   );

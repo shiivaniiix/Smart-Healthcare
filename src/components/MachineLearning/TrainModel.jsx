@@ -1,4 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
+import { useEffect } from 'react';
 
 function TrainModel({ model }) {
     useEffect(() => {

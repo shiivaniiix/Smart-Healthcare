@@ -9,7 +9,7 @@ function Sidebar({ isOpen, onToggle }) {
   const Menus = [
     { title: "Dashboard", src: "Chart_fill", path: "/dashboard" },
     { title: "Home", src: "Chat", path: "/homepage" },
-    { title: "Accounts", src: "User", gap: true, path: "/accounts" },
+    { title: "Saline level detection", src: "User", gap: true, path: "/accounts" },
     { title: "Schedule", src: "Calendar", path: "/schedule" },
     { title: "Search", src: "Search", path: "/search" },
     { title: "Files", src: "Folder", gap: true, path: "/files" },
